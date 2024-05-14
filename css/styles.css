@@ -1,0 +1,120 @@
+:root {
+    --blanco: #FFF;
+    --oscuro: #000;
+    --principal: #c8fce2;
+    --fondo: #0a132c;
+}
+/* Globales */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box 
+}
+
+*,
+*:before
+*:after {
+    box-sizing: inherit; 
+} 
+
+body {
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: #111727;
+    color: var(--blanco);
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+nav .logo{
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--principal);
+    margin-left: 2rem;
+    letter-spacing: .2rem;
+}
+nav .menu{
+    font-size: 3.8rem;
+    color: var(--principal);
+    font-weight: 700;
+    display: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li{
+    margin-right: 2rem;
+}
+nav ul li a{
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 1rem;
+}
+nav ul li a.activo{
+    background-color: #0a43e0;
+    border-radius: 0.5rem;
+}
+nav ul li a:hover{
+    background-color: #00071b;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+nav ul li svg{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav{
+        background-color: var(--fondo);
+        position: sticky;
+        top: 0;
+    }
+    nav .menu{
+        display: flex;
+    }
+    nav ul{
+        display: block;
+        background-color: var(--fondo);
+        border-radius: .7rem;
+        width: 23rem;
+        position: fixed;
+        top: 6rem;
+        right: 1rem;
+        transition: all 0.3s ease;
+    }
+    nav ul li{
+        margin: 0.8rem 1rem;
+    }
+    /* nav ul li:nth-child(1){
+        margin-top: 1rem;
+    } */
+    /* nav ul hr{
+        color: rgb(38 55 153 / 25%);
+        margin: 1rem 1.5rem 0 1.5rem;
+    } */
+    nav ul li svg{
+        display: flex;
+        font-size: 1.8rem;
+        margin-right: .8rem;
+    }
+    nav ul li a{
+        padding: 0.76rem;
+        color: var(--blanco);
+        display: flex;
+        align-items: center;
+    }
+    nav ul li a:hover{
+        background-color: #00071b;
+        color: var(--blanco);
+        border-radius: .7rem;
+    }
+    nav ul.desplegar {
+        top: -100%;
+    }
+}
